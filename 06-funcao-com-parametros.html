@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Função com parâmetros</title>
+</head>
+
+<body>
+
+    <h1>Validação de formulário</h1>
+
+    <form name="form1" method="post"
+        onsubmit="return VerificaForm(this)">
+
+        Nome:
+        <input type="text" name="nome">
+        <br><br>
+
+        Email:
+        <input type="text" name="email">
+        <br><br>
+
+        Fone:
+        <input type="text" name="fone">
+        <br><br>
+
+        Sexo:
+        <input type="radio" name="sexo" value="Masculino">
+        Masculino
+
+        <input type="radio" name="sexo" value="Feminino">
+        Feminino
+        <br><br>
+
+        Software que conhece:
+        <br>
+
+        <input type="checkbox" name="soft1">
+        Windows
+        <br>
+
+        <input type="checkbox" name="soft2">
+        Linux
+        <br>
+
+        <input type="checkbox" name="soft3">
+        Mac
+        <br><br>
+
+        Navegador preferido:
+        <select name="navegador">
+            <option value="Selecione">Selecione</option>
+            <option value="Chrome">Chrome</option>
+            <option value="Firefox">Firefox</option>
+            <option value="Edge">Edge</option>
+        </select>
+
+        <br><br>
+
+        Comentário:
+        <br>
+
+        <textarea name="comentario"></textarea>
+
+        <br><br>
+
+        <input type="submit" name="enviar" value="Enviar">
+
+    </form>
+
+    <script>
+
+        // Declarando a função
+        function VerificaForm(frm) {
+
+            if (frm.nome.value == '') {
+                alert('Campo obrigatório');
+                frm.nome.focus();
+                return false;
+            }
+
+            if (frm.email.value == '') {
+                alert('Campo obrigatório');
+                frm.email.focus();
+                return false;
+            }
+
+            if (frm.fone.value == '') {
+                alert('Campo obrigatório');
+                frm.fone.focus();
+                return false;
+            }
+
+            if (frm.sexo[0].checked == false &&
+                frm.sexo[1].checked == false) {
+                alert('Selecione o sexo');
+                return false;
+            }
+
+            if (frm.soft1.checked == false &&
+                frm.soft2.checked == false &&
+                frm.soft3.checked == false) {
+                alert('Selecione pelo menos um software');
+                return false;
+            }
+
+            if (frm.navegador.value == 'Selecione') {
+                alert('Selecione um navegador');
+                frm.navegador.focus();
+                return false;
+            }
+
+            if (frm.comentario.value == '') {
+                alert('Campo obrigatório');
+                frm.comentario.focus();
+                return false;
+            }
+
+            return true;
+        }
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+<!-- 1\. A função `VerificaForm(frm)` recebe o formulário como parâmetro e verifica se todos os campos obrigatórios foram preenchidos corretamente.
+
+2\. O comando `if` verifica se os campos Nome, E-mail e Telefone estão vazios; se estiverem, aparece uma mensagem de alerta.
+
+3\. O comando `focus()` posiciona o cursor no campo que precisa ser preenchido, facilitando a correção pelo usuário.
+
+4\. Também são verificadas as opções de sexo, os softwares selecionados, o navegador preferido e o campo de comentário.
+
+5\. No final, se todos os campos estiverem preenchidos corretamente, a função retorna `true` e permite o envio do formulário; caso contrário, retorna `false` e impede o envio. -->

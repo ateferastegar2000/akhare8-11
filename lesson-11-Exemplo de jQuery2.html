@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        a {
+            display: block;
+            margin: 15px 0;
+            color: blue;
+        }
+
+        p {
+            background-color: lightgray;
+            padding: 10px;
+            width: 400px;
+        }
+
+        #texto1, #texto2 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Exemplo de jQuery</h1>
+
+    <a href="#" id="link1">O que é jQuery?</a>
+
+    <p id="texto1">
+        jQuery é uma biblioteca JavaScript que facilita
+        a manipulação de elementos HTML.
+    </p>
+
+    <a href="#" id="link2">O que é HTML?</a>
+
+    <p id="texto2">
+        HTML é uma linguagem utilizada para criar
+        a estrutura das páginas web.
+    </p>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('#link1').click(function(event) {
+                event.preventDefault();
+
+                $('#texto1').animate({
+                    width: 'toggle'
+                });
+            });
+
+            $('#link2').click(function(event) {
+                event.preventDefault();
+
+                $('#texto2').animate({
+                    width: 'toggle'
+                });
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+<!-- O método $(document).ready() espera o carregamento completo do documento HTML.
+
+O evento click() executa uma função quando o usuário clica em um link.
+
+O método animate() cria uma animação no elemento selecionado.
+
+A propriedade width: 'toggle' mostra ou esconde o parágrafo na horizontal.
+
+Cada link controla seu próprio parágrafo através do seu respectivo Id -->

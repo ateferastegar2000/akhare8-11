@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício extra 22</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        p {
+            background-color: lightgray;
+            padding: 15px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Exercício extra 22</h1>
+
+    <p>
+        O HTML é uma linguagem utilizada para criar páginas web.
+    </p>
+
+    <p>
+        O CSS permite modificar as cores e os estilos das páginas.
+    </p>
+
+    <p>
+        O JavaScript adiciona interatividade aos sites.
+    </p>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('p').click(function() {
+
+                $(this).hide();
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+<!-- 1. A estrutura HTML cria uma página com um título e três parágrafos.
+2. A biblioteca jQuery é importada através de um link CDN.
+3. O método document.ready() espera o carregamento completo da página.
+4. O evento click() executa uma função quando o usuário clica em um parágrafo.
+5. O método hide() faz o parágrafo selecionado desaparecer da página. -->

@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo de jQuery</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        .btn {
+            background-color: lightgray;
+            padding: 10px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .caixa {
+            background-color: #eeeeee;
+            padding: 15px;
+        }
+
+        #texto2 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Exemplo de jQuery</h1>
+
+    <section>
+
+        <article>
+            <div class="btn">Clique para ocultar</div>
+            <p class="caixa">
+                O jQuery facilita a manipulação de elementos HTML.
+            </p>
+        </article>
+
+        <article>
+            <div class="btn">Clique para mostrar</div>
+            <p class="caixa" id="texto2">
+                O HTML é utilizado para criar páginas web.
+            </p>
+        </article>
+
+        <article>
+            <div class="btn">Clique para ocultar</div>
+            <p class="caixa">
+                O JavaScript permite adicionar interatividade.
+            </p>
+        </article>
+
+    </section>
+
+    <script>
+
+        $(function() {
+
+            $('section article .btn').click(function() {
+
+                $(this).siblings('p.caixa').slideToggle();
+
+                if ($(this).text() == 'Clique para mostrar') {
+
+                    $(this).text('Clique para ocultar');
+
+                } else {
+
+                    $(this).text('Clique para mostrar');
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+<!-- 1. O método $(function()) espera o carregamento completo do documento HTML.
+2. O evento click() executa uma função quando o usuário clica no botão.
+3. O método siblings() seleciona o parágrafo que está ao lado do botão.
+4. O método slideToggle() mostra ou esconde o parágrafo com um efeito vertical.
+5. O método text() altera o texto do botão entre mostrar e ocultar.
+
+Atividade 1 concluída
+Resultado esperado: ao clicar no texto acima de cada parágrafo, ele será mostrado ou escondido com uma animação vertica -->

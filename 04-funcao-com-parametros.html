@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04-funcao-com-parametros</title>
+</head>
+
+<body>
+    <h1>funcaocomparametros5</h1>
+    <p id="teste">a media do aluno e:</p>
+    <script>
+
+        function Media(a, b, c, d) {
+            return (a + b + c + d) / 4;
+        }
+        var nota1 = 0, nota2 = 0, nota3 = 0, nota4 = 0;
+
+        alert('informe as 4 notas do aluno');
+
+        nota1 = parseFloat(prompt("digite a primeira nota"));
+        nota2 = parseFloat(prompt("digite a segunda nota"));
+        nota3 = parseFloat(prompt("digite a terceira nota"));
+        nota4 = parseFloat(prompt("digite a quarta nota"));
+
+        document.getElementById('teste').innerHTML += Media( nota1,nota2,nota3,nota4);
+    </script>
+</body>
+
+</html>
+
+
+<!-- 1. A função Media(a, b, c, d) recebe quatro notas e calcula a média delas.
+
+2. São criadas quatro variáveis para armazenar as notas do aluno, que são solicitadas ao usuário através do comando prompt.
+
+3. O comando parseFloat converte os valores digitados em números decimais, permitindo realizar cálculos matemáticos.
+
+4. Por fim, a função Media é chamada com as quatro notas, e a média calculada é exibida dentro do parágrafo com o ID teste, utilizando o comando innerHTML. -->

@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercício extra 21</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        p {
+            padding: 15px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Exercício extra 21</h1>
+
+    <p>
+        O HTML é utilizado para criar páginas web.
+    </p>
+
+    <p>
+        O CSS é utilizado para estilizar páginas web.
+    </p>
+
+    <p>
+        O JavaScript permite criar páginas interativas.
+    </p>
+
+    <script>
+
+        $(document).ready(function() {
+
+            $('p').click(function() {
+
+                $(this).css('background-color', 'yellow');
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+<!-- 1. A estrutura HTML cria uma página com o título e três parágrafos.
+2. A biblioteca jQuery é importada através de um link CDN.
+3. O método document.ready() espera o carregamento da página.
+4. O evento click() identifica quando o usuário clica em um parágrafo.
+5. O método css() altera a cor de fundo do parágrafo para amarelo. -->

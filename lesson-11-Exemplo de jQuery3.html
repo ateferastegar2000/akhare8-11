@@ -1,0 +1,142 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Validação de formulário</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        input, textarea {
+            display: block;
+            width: 300px;
+            margin-bottom: 5px;
+            padding: 8px;
+        }
+
+        .erro, .erro2 {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Faça seu cadastro</h2>
+
+    <form id="form1" action="#" method="post">
+
+        <label>Nome:</label>
+        <input type="text" id="nome">
+        <span id="erroNome" class="erro"></span>
+
+        <br>
+
+        <label>E-mail:</label>
+        <input type="email" id="email">
+        <span id="erroEmail" class="erro"></span>
+
+        <br>
+
+        <label>Mensagem:</label>
+        <textarea id="mensagem"></textarea>
+        <span id="erroMensagem" class="erro2"></span>
+
+        <br>
+
+        <button type="button" id="salvar">Salvar</button>
+
+    </form>
+
+    <script>
+
+        $(document).ready(function() {
+
+            // Limpar mensagens de erro
+            $('#nome, #email, #mensagem').keydown(function() {
+
+                $('.erro').text('');
+                $('.erro2').text('');
+
+            });
+
+            // Ao clicar no botão salvar
+            $('#salvar').click(function() {
+
+                var nome = $('#nome');
+                var email = $('#email');
+                var mensagem = $('#mensagem');
+
+                // Verifica se todos os campos estão vazios
+                if (!nome.val() &&
+                    !email.val() &&
+                    !mensagem.val()) {
+
+                    $('#erroNome').text('Campo obrigatório!');
+                    nome.focus();
+
+                }
+
+                else if (!nome.val()) {
+
+                    $('#erroNome').text('Campo obrigatório!');
+                    nome.focus();
+
+                }
+
+                else if (!email.val()) {
+
+                    $('#erroEmail').text('Campo obrigatório!');
+                    email.focus();
+
+                }
+
+                else if (!mensagem.val()) {
+
+                    $('#erroMensagem').text('Campo obrigatório!');
+                    mensagem.focus();
+
+                }
+
+                else {
+
+                    // Validar os campos
+                    $('#nome').after('', null);
+                    $('#email').after('', null);
+                    $('#mensagem').after('', null);
+
+                    $('#form1').submit();
+
+                }
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+
+
+
+<!-- 1. O método document.ready() garante que o código seja executado após o carregamento do documento.
+2. O evento keydown() limpa as mensagens de erro quando o usuário começa a digitar.
+3. O evento click() executa a validação quando o botão Salvar é pressionado.
+4. As condições if e else if verificam se os campos estão vazios e mostram mensagens de erro.
+5. O método focus() posiciona o cursor no campo vazio e o método submit() envia o formulário quando todos os campos estão preenchidos. -->
